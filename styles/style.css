@@ -4,12 +4,12 @@ body {
 }
 
 #game-intro {
-  padding: 20px 0px;
+  padding: 300px 400px;
   background-image: url(../images/Clouds.jpg);
-  background-size: cover;
+  background-size: cover;  
 }
 
-#game-container {
+#game-container {    /*idk yet what to do with this. Have to put images in HTML ?*/
   display: flex;
   width: 100vw;
   padding: 20px 0px;
@@ -19,15 +19,15 @@ body {
 #game-screen {
   display: none;
   align-content: center;
-  padding: 20px 0px;
-  overflow: hidden;
+  padding: 500px 400px;
+  overflow: hidden;  /*overflow occurs when an element’s content does not fit entirely inside the element box.*/
   position: relative;
   background-image: url(../images/Kitchen.png);
   background-size: cover;
   /*animation: slide 5s linear infinite;*/
 }
 
-@keyframes slide {
+/*@keyframes slide {   THIS IS TO CONTROL ANIMATION OF THE BACKGROUND WHICH WE HAVEN'T. THE BACKGROUND DOESN'T MOVE.
   0% {
     background-position: 0 -1000px;
   }
@@ -37,16 +37,25 @@ body {
   100% {
     background-position: 0 50px;
   }
-}
+}*/
 
 #game-end {
   display: none;
+  padding: 300px 400px;
+  background-image: url(../images/Clouds.jpg);
+  background-size: cover;
+}
+
+@font-face {
+  font-family: akbar;
+  src: url(../font/akbar.ttf);
 }
 
 .game-intro p {
   font-size: 18px;
-  font-family: "Verdana";
+  font-family: akbar;  /*Idk why font doesn't change when I changed it here*/
 }
+
 
 .logo-img {
   width: 350px;

@@ -9,26 +9,20 @@
   <body>
     <main>
       <!-- #game-intro is initially shown on the game start screen -->
+
       <div id="game-intro">
+        
+        <img src="./images/hungy-homer-title.png" alt="" class="logo-img" /> <br />
+        
+        <p>In the heart of Springfield, our doughnut-loving hero Homer is on an epic quest for munchies, and he needs your help to chomp his way to glory in "Hungry Hungry Homer." Use the left and right keypad buttons to help Homer catch his favourite foods. But be careful! nuclear waste and yucky greens can appear at any time.</p>
+        
+        <button id="start-button">Start Game</button>
 
-        <br />
+        <p>Use the left and right arrow to control Homer!</p>
 
-        <h2> Intstructions</h2>
-
-        <p>In the heart of Springfield, our doughnut-loving hero Homer is on an epic quest for munchies, and he needs your help to chomp his way to glory in "Hungry Hungry Homer."
-            Use the left and right keypad buttons to help Homer catch his favourite foods. But be careful! nuclear waste and yucky greens can appear at any time.</p>
-
-        <img src="./images/arrows.png" alt="" class="arrows-img" />  <!-- Keys Image-->
-
-     <button id="start-button">Start Game</button> 
-
+        <img src="./images/arrows.png" alt="" class="arrows-img" />        
+      
       </div>
-
-
-
-
-
-
 
       <div id="game-container">
         <div>
@@ -45,13 +39,13 @@
       <!-- #game-end is initially hidden using CSS style display: none -->
       <div id="game-end">
 
-        <h1>Game Over</h1>
-        <br />
+        <br /> <img src="./images/game-over-solid.png" alt="" class="game-over-img" /> <br />
+        
+        <!-- !!!!!!! Need to put the Score Image and the actual score !!!!!! -->
 
         <P> D'oh! You killed Homer! </P>
 
-
-        <button id="restart-button">Restart</button>
+        <button id="restart-button">Restart</button> <!--How to put the restart image ?? -->
       </div>
     </main>
     <script src="js/player.js"></script>
