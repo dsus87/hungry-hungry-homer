@@ -88,7 +88,7 @@ updateHomer(){
        if (Math.random() > 0.98 && this.obstacles.length < 5) {
         this.obstaclesRibWich.push (new Sandwich(this.gameScreen,"Ribwich")); 
         } 
-        if (Math.random() > 0.98 && this.obstacles.length < 5) {
+        if (Math.random() > 0.98 && this.obstacles.length < 3) {
             this.obstaclesBeer.push (new Beer(this.gameScreen,"Beer")); 
     }
     }

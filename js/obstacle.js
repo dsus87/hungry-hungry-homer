@@ -32,21 +32,21 @@ class Obstacle {
     }
   
     move() {
-      this.top += 1;
+      this.top += 0.25;
       this.updatePosition();
     }
   }
   
-  // Extended class for Donut
-  class Donut extends Obstacle {
-    constructor(gameScreen) {
-      super(gameScreen);
-      this.points = 100;
-      this.speed = 2;
-      this.element.src = './images/donut-asset.png';
+  // // Extended class for Donut
+  // class Donut extends Obstacle {
+  //   constructor(gameScreen) {
+  //     super(gameScreen);
+  //     this.points = 100;
+  //     this.speed = 2;
+  //     this.element.src = './images/donut-asset.png';
   
-    }
-  }
+  //   }
+  // }
   //   // static shouldSpawn() {
   //   //   return Math.random() < 0.9; // 90% chance to spawn
   //   // }
@@ -55,12 +55,16 @@ class Obstacle {
   
   //Extended class for Sandwich
   class Sandwich extends Obstacle {
-    constructor(gameScreen) {
+    constructor(gameScreen, name) {
       super(gameScreen);
-      this.points = 150;
-      this.speed = 3;
       this.element.src = 'images/ribwich.png';
+      this.name = name;
     }
+    move() {
+      this.top += 0.5;
+      this.updatePosition();
+    }
+
   }
   
   //   // static shouldSpawn() {
@@ -71,11 +75,14 @@ class Obstacle {
   
   // Extended class for Beer
   class Beer extends Obstacle {
-    constructor(gameScreen) {
+    constructor(gameScreen, name) {
       super(gameScreen);
-      this.points = 200;
-      this.speed = 4;
       this.element.src = 'images/duff-beer.png';
+      this.name = name;
+    }
+    move() {
+      this.top += 1;
+      this.updatePosition();
     }
   }
   
