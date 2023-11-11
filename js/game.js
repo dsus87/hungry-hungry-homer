@@ -15,6 +15,10 @@ class Game {
         this.width = 1280;
         this.height = 720;
         this.obstacles = []; // new Obstacle()
+        this.obstaclesDonut = [];    // new Obstacle()
+        this.obstaclesRibWich = [];    // new Obstacle()
+        this.obstaclesBeer = [];   
+     
         this.score = 0;
         this.lives = 3;
         this.gameIsOver = false;
@@ -37,65 +41,115 @@ class Game {
             return;
         }
         console.log('gameLoop exec')
+        this.updateHomer();
         this.update();// update the game
+
+        this.didPlayerCollide(this.obstacles)
+        this.didPlayerCollide(this.obstaclesBeer);
+        this.didPlayerCollide(this.obstaclesDonut);
+        this.didPlayerCollide(this.obstaclesRibWich);
+
         // this.gameLoop()
         window.requestAnimationFrame(()=>  this.gameLoop()); // used to improve/better manage the rate of frames for the game animation
     }
 
-    update(){
-        // Return the new position of the car to update the game
-        this.player.move();
+
+updateHomer(){
+    this.player.move();
+
+    }    
+
+
+    update(){  //move the player and update the obstacles can be seperated to 2 seperate functions
+        for(let i= 0; i < this.obstacles.length; i++){
+            const obstacle = this.obstacles[i];
+            obstacle.move();
+                    // Return the new position of the homer to update the game
+        }
         // Return the new positions of the obstacles to update the game
-       for(let i= 0; i < this.obstacles.length; i++){
-        const obstacle = this.obstacles[i];
-        obstacle.move();
+      
+        //for loop to update the movement of the sandwich
+        for(let i= 0; i < this.obstaclesRibWich.length; i++){
+            const obstacle = this.obstaclesRibWich[i];
+            obstacle.move();}
 
-        // If the player's car collides with an obstacle
-            if (this.player.didCollide(obstacle)) {
-                // Remove the obstacle element from the DOM
-                obstacle.element.remove();
-                // Remove obstacle object from the array
-                this.obstacles.splice(i, 1);
-                // Reduce player's lives by 1
-                if (obstacle === Donut){
-                    this.score += this.points;
-                }else if(obstacle=== Sandwich){
-                    this.score += this.points
-                }else if(obstacle=== Beer){
-                    this.score += this.points;
-                }else if(obstacle=== pomatoJuice){
-                    this.lives--
-                }else if (obstacle=== blinky){
-                    this.lives === 0;
-                }
-                document.getElementById('lives').textContent = this.lives;
-                // Update the counter variable to account for the removed obstacle
-                i--;
-            } 
 
-            /*else if (obstacle.top > this.height) {
-                // Increase the score by 1
-                this.score++;
-                document.getElementById('score').textContent = this.score;
-                // Remove the obstacle from the DOM
-                obstacle.element.remove();
-                // Remove obstacle object from the array
-                this.obstacles.splice(i, 1);
-                // Update the counter variable to account for the removed obstacle
-                i--;
-            }*/
-        }
-      // End the game
-        if (this.lives === 0) {
-            this.endGame();
-        }
+        for(let i= 0; i < this.obstaclesBeer.length; i++){
+            const obstacle = this.obstaclesBeer[i];
+                obstacle.move();}
+
     // Create a new obstacle based on a random probability
+
     // when there is no other obstacles on the screen
-        if (Math.random() > 0.98 && this.obstacles.length < 5) {
-                this.obstacles.push(new Obstacle(this.gameScreen));
+        if (Math.random() > 0.995 && this.obstacles.length < 3) {
+                this.obstacles.push(new Obstacle(this.gameScreen,"Donut")); 
         }
-       
+       // here we are calling donuts, similar logic for sandwich etc..
+       if (Math.random() > 0.995 && this.obstacles.length < 2) {
+        this.obstaclesRibWich.push (new Sandwich(this.gameScreen,"Ribwich")); 
+        } 
+        if (Math.random() > 0.995 && this.obstacles.length < 1) {
+            this.obstaclesBeer.push (new Beer(this.gameScreen,"Beer")); 
     }
+    }
+
+    
+// pass as argument the array
+    didPlayerCollide(obstaclesArray) {
+        
+        for(let i= 0; i < obstaclesArray.length; i++){   
+            const obstacle = obstaclesArray[i];
+            console.log(obstacle)
+       
+            // If the player's car collides with an obstacle
+                if (this.player.didCollide(obstacle)) {
+                    // Remove the obstacle element from the DOM
+                    obstacle.element.remove();
+                    // Remove obstacle object from the array
+                    obstaclesArray.splice(i, 1);
+                    // Reduce player's lives by 1
+                    if (obstacle.name === "Donut"){
+                        this.score += 100;
+                        
+                    }else if(obstacle.name === "Ribwich"){   // needs to be checked with the name
+                        this.score += 150;
+
+                    }else if(obstacle.name === "Beer"){
+                        this.score += 200;
+
+                    }else if(obstacle.name === "pomatoJuice"){
+                        this.lives--
+                    }else if (obstacle.name === "blinky"){
+                        this.lives === 0;
+                    }
+                    document.getElementById('lives').textContent = this.lives;
+                    document.getElementById('score').textContent = this.score;
+                    // Update the counter variable to account for the removed obstacle
+                    i--;
+                } 
+                
+    
+                /*else if (obstacle.top > this.height) {
+                    // Increase the score by 1
+                    this.score++;
+                    document.getElementById('score').textContent = this.score;
+                    // Remove the obstacle from the DOM
+                    obstacle.element.remove();
+                    // Remove obstacle object from the array
+                    this.obstacles.splice(i, 1);
+                    // Update the counter variable to account for the removed obstacle
+                    i--;
+                }*/
+            }
+          // End the game
+            if (this.lives === 0) {
+                this.endGame();
+            }
+        }
+
+
+   // Interval to randomize falling objects
+
 
     // Create a new method responsible for ending the game
   endGame() {
@@ -109,6 +163,5 @@ class Game {
     // Show end game screen
     this.gameEndScreen.style.display = "block";
   }
-}
-/* 
- */
+    }
+    
