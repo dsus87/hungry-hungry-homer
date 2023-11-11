@@ -5,7 +5,7 @@ body {
 
 #game-intro {
   padding: 100px 400px;
-  background-image: url(../images/Clouds.jpg);
+  background-image: url("../images/Clouds.jpg");
   background-size: cover;  
 }
 
@@ -22,9 +22,12 @@ body {
   padding: 500px 400px;
   overflow: hidden;  
   position: relative;
-  background-image: url(../images/Kitchen.png);
+  background-image: url("../images/Kitchen.png");
   background-size: cover;
 }
+
+/*position: absolute
+30% first child - score and lives. the rest - food drop*/
 
 
 #game-end {
