@@ -4,7 +4,7 @@ body {
 }
 
 #game-intro {
-  padding: 300px 400px;
+  padding: 100px 400px;
   background-image: url(../images/Clouds.jpg);
   background-size: cover;  
 }
@@ -20,30 +20,20 @@ body {
   display: none;
   align-content: center;
   padding: 500px 400px;
-  overflow: hidden;  /*overflow occurs when an element’s content does not fit entirely inside the element box.*/
+  overflow: hidden;  
   position: relative;
   background-image: url(../images/Kitchen.png);
   background-size: cover;
-  /*animation: slide 5s linear infinite;*/
 }
 
-/*@keyframes slide {   THIS IS TO CONTROL ANIMATION OF THE BACKGROUND WHICH WE HAVEN'T. THE BACKGROUND DOESN'T MOVE.
-  0% {
-    background-position: 0 -1000px;
-  }
-  95% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 0 50px;
-  }
-}*/
 
 #game-end {
   display: none;
-  padding: 300px 400px;
+  padding: 100px 400px;
   background-image: url(../images/Clouds.jpg);
   background-size: cover;
+  font-size: 18px;
+  font-family: akbar;
 }
 
 @font-face {
@@ -51,9 +41,9 @@ body {
   src: url(../font/akbar.ttf);
 }
 
-.game-intro p {
+#game-intro p {
   font-size: 18px;
-  font-family: akbar;  /*Idk why font doesn't change when I changed it here*/
+  font-family: akbar; 
 }
 
 
