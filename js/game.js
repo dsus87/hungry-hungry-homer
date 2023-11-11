@@ -24,7 +24,21 @@ start() {
 
     this.gameScreen.style.width = `${this.width}px`;
     this.gameSceen.style.height = `${this.height}px`;
-    this.gameScreen.style.display = 'none';
-    this.
-
+    this.startScreen.style.display = 'none';
+    this.gameScreen.style.display = 'block';
+    this.gameloop();
 }
+
+gameLoop(){
+    if (this.gameIsOver === true){
+        return;
+    }
+    this.update();
+    window.requestAnimationFrame(()=> this.gameLoop())
+}
+
+update(){
+    
+}
+/* 
+ */
