@@ -34,10 +34,10 @@ window.onload = function () {
          
         switch (key) {
           case "ArrowLeft":
-            game.player.directionX = -1;
+            game.player.directionX = -7.5;
             break;
           case "ArrowRight":
-            game.player.directionX = 1;
+            game.player.directionX = 7.5;
             break;
         }
       }

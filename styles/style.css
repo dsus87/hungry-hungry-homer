@@ -32,7 +32,7 @@ body {
 
 #game-end {
   display: none;
-  padding: 100px 400px;
+  padding: 200px 400px;
   background-image: url("../images/Clouds.jpg");
   background-size: cover;
   font-size: 18px;
@@ -51,7 +51,8 @@ body {
 
 
 .logo-img {
-  width: 350px;
+  width: 600px;
+  justify-items: center;
 }
 
 .arrows-img {
@@ -59,12 +60,25 @@ body {
 }
 
 body button {
-  font-size: 30px;
-  background-color: #870007;
-  color: #fff;
-  padding: 20px 40px;
+  background-color: #c80813ff;
+  padding: 10px;
   border: 0;
   box-shadow: 0;
-  border-radius: 5px;
+  border-radius: 15px;
   margin-bottom: 20px;
+
+}
+
+#start-img {
+ width:326px;
+ height: 64.67;
+
+}
+#restart-img{
+  width: 200px;
+  height: 64.67px;
+} 
+
+#game-over-img{
+  width:675px;
 }
