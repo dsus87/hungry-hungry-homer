@@ -68,7 +68,7 @@ class Obstacle {
       super(gameScreen);
       this.points = 200;
       this.speed = 4;
-      this.element.src = 'images/duff-beer.png';
+      this.element.src = url("../images/duff-beer.png");
     }
   
     static shouldSpawn() {

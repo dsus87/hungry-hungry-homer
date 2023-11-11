@@ -33,7 +33,7 @@ body {
 #game-end {
   display: none;
   padding: 100px 400px;
-  background-image: url(../images/Clouds.jpg);
+  background-image: url("../images/Clouds.jpg");
   background-size: cover;
   font-size: 18px;
   font-family: akbar;
