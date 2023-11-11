@@ -75,3 +75,35 @@ class Obstacle {
       return Math.random() < 0.3; // 30% chance to spawn    
     }
   }
+
+
+    // Extended class for Pomato-juice
+    class pomatoJuice extends Obstacle {
+      constructor(gameScreen) {
+        super(gameScreen);
+        this.points = 0;
+        this.speed = 3;
+        this.element.src = './images/pomato-juice.png';
+       //  this.lives = -1 ;   this needs to be handled somewhere else, peraps in Game or Script.js
+      }
+    
+      static shouldSpawn() {
+        return Math.random() < 0.9; // 90% chance to spawn
+      }
+    }
+
+      // Extended class for blinky 
+  
+      class blinky extends Obstacle {
+        constructor(gameScreen) {
+          super(gameScreen);
+          this.points = 0;
+          this.speed = 3;
+          this.element.src = './images/pomato-juice.png';
+         //  this.lives = -1 ;   this needs to be handled somewhere else, peraps in Game or Script.js
+        }
+      
+        static shouldSpawn() {
+          return Math.random() < 0.9; // 90% chance to spawn
+        }
+      }
