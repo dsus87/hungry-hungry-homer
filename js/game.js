@@ -6,10 +6,10 @@ class Game {
         this.gameEndScreen = document.getElementById('game-end');
         this.player = new Player(
             this.gameScreen,
-            1000,
-            680,
-            68.5,
-            150,
+            900,
+            285,
+            182.67,
+            400,
             './images/homer-character.png'
         ); //  new Player()
         this.width = 1280;
@@ -91,7 +91,7 @@ class Game {
         }
     // Create a new obstacle based on a random probability
     // when there is no other obstacles on the screen
-        if (Math.random() > 0.98 && this.obstacles.length < 1) {
+        if (Math.random() > 0.98 && this.obstacles.length < 5) {
                 this.obstacles.push(new Obstacle(this.gameScreen));
         }
        
