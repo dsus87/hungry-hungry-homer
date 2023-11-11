@@ -16,13 +16,9 @@ class Game {
         this.height = 720;
         this.obstacles = []; // new Obstacle()
         this.obstaclesDonut = [];    // new Obstacle()
-        this.obstaclesRibWich = [];         // new Obstacle()
+        this.obstaclesRibWich = [];    // new Obstacle()
         this.obstaclesBeer = [];   
      
-
-
-
-
         this.score = 0;
         this.lives = 3;
         this.gameIsOver = false;
@@ -47,9 +43,12 @@ class Game {
         console.log('gameLoop exec')
         this.updateHomer();
         this.update();// update the game
+
+        this.didPlayerCollide(this.obstacles)
         this.didPlayerCollide(this.obstaclesBeer);
         this.didPlayerCollide(this.obstaclesDonut);
         this.didPlayerCollide(this.obstaclesRibWich);
+
         // this.gameLoop()
         window.requestAnimationFrame(()=>  this.gameLoop()); // used to improve/better manage the rate of frames for the game animation
     }
@@ -58,14 +57,14 @@ class Game {
 updateHomer(){
     this.player.move();
 
-}    
+    }    
 
 
     update(){  //move the player and update the obstacles can be seperated to 2 seperate functions
         for(let i= 0; i < this.obstacles.length; i++){
             const obstacle = this.obstacles[i];
             obstacle.move();
-                    // Return the new position of the car to update the game
+                    // Return the new position of the homer to update the game
         }
         // Return the new positions of the obstacles to update the game
       
@@ -74,7 +73,13 @@ updateHomer(){
             const obstacle = this.obstaclesRibWich[i];
             obstacle.move();}
 
+
+        for(let i= 0; i < this.obstaclesBeer.length; i++){
+            const obstacle = this.obstaclesBeer[i];
+                obstacle.move();}
+
     // Create a new obstacle based on a random probability
+
     // when there is no other obstacles on the screen
         if (Math.random() > 0.98 && this.obstacles.length < 5) {
                 this.obstacles.push(new Obstacle(this.gameScreen,"Donut")); 
@@ -82,12 +87,15 @@ updateHomer(){
        // here we are calling donuts, similar logic for sandwich etc..
        if (Math.random() > 0.98 && this.obstacles.length < 5) {
         this.obstaclesRibWich.push (new Sandwich(this.gameScreen,"Ribwich")); 
-} 
+        } 
+        if (Math.random() > 0.98 && this.obstacles.length < 5) {
+            this.obstaclesBeer.push (new Beer(this.gameScreen,"Beer")); 
+    }
     }
 
     
 // pass as argument the array
-    didPlayerCollide(obstaclesArray){
+    didPlayerCollide(obstaclesArray) {
         
         for(let i= 0; i < obstaclesArray.length; i++){   
             const obstacle = obstaclesArray[i];
@@ -104,10 +112,11 @@ updateHomer(){
                         this.score += 100;
                         
                     }else if(obstacle.name === "Ribwich"){   // needs to be checked with the name
-                        this.score += 150
+                        this.score += 150;
 
                     }else if(obstacle.name === "Beer"){
                         this.score += 200;
+
                     }else if(obstacle.name === "pomatoJuice"){
                         this.lives--
                     }else if (obstacle.name === "blinky"){
@@ -118,6 +127,7 @@ updateHomer(){
                     // Update the counter variable to account for the removed obstacle
                     i--;
                 } 
+                
     
                 /*else if (obstacle.top > this.height) {
                     // Increase the score by 1
@@ -135,7 +145,7 @@ updateHomer(){
             if (this.lives === 0) {
                 this.endGame();
             }
-    }
+        }
 
 
    // Interval to randomize falling objects
@@ -153,6 +163,5 @@ updateHomer(){
     // Show end game screen
     this.gameEndScreen.style.display = "block";
   }
-}
-/* 
- */
+    }
+    

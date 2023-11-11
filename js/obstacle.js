@@ -69,14 +69,15 @@ class Obstacle {
   //   // }
   // }
   
-  // // Extended class for Beer
-  // class Beer extends Obstacle {
-  //   constructor(gameScreen) {
-  //     super(gameScreen);
-  //     this.points = 200;
-  //     this.speed = 4;
-  //     this.element.src = 'images/duff-beer.png';
-  //   }
+  // Extended class for Beer
+  class Beer extends Obstacle {
+    constructor(gameScreen) {
+      super(gameScreen);
+      this.points = 200;
+      this.speed = 4;
+      this.element.src = 'images/duff-beer.png';
+    }
+  }
   
   //   // static shouldSpawn() {
   //   //   return Math.random() < 0.3; // 30% chance to spawn    
