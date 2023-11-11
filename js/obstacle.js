@@ -1,7 +1,7 @@
 class Obstacle {
-    constructor(gameScreen) {
+    constructor(gameScreen, name) {
       this.gameScreen = gameScreen;
-      this.left = Math.floor(Math.random() * 300 + 70);
+      this.left = Math.floor(Math.random() * 950 + 70);
       this.top = 0; // Start above the screen
       this.width = 80;
       this.height = 80;
@@ -14,13 +14,16 @@ class Obstacle {
       this.element.style.height = `${this.height}px`;
       this.element.style.top = `${this.top}px`;
       this.element.style.left = `${this.left}px`;
-  
+      this.name = name;
       this.gameScreen.appendChild(this.element);
     }
   
     // static shouldSpawn() {   // spawn generator, base, will be overidden  
     //   return true; //Static class methods are defined on the class itself. You cannot call a static method on an object, only on an object class.
     // }
+
+    // property name for the obstacle
+
   
     updatePosition() {
       this.element.style.left = `${this.left}px`;
