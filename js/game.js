@@ -81,14 +81,14 @@ updateHomer(){
     // Create a new obstacle based on a random probability
 
     // when there is no other obstacles on the screen
-        if (Math.random() > 0.98 && this.obstacles.length < 5) {
+        if (Math.random() > 0.995 && this.obstacles.length < 3) {
                 this.obstacles.push(new Obstacle(this.gameScreen,"Donut")); 
         }
        // here we are calling donuts, similar logic for sandwich etc..
-       if (Math.random() > 0.98 && this.obstacles.length < 5) {
+       if (Math.random() > 0.995 && this.obstacles.length < 2) {
         this.obstaclesRibWich.push (new Sandwich(this.gameScreen,"Ribwich")); 
         } 
-        if (Math.random() > 0.98 && this.obstacles.length < 3) {
+        if (Math.random() > 0.995 && this.obstacles.length < 1) {
             this.obstaclesBeer.push (new Beer(this.gameScreen,"Beer")); 
     }
     }
