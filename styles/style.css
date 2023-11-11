@@ -19,7 +19,7 @@ body {
 #game-screen {
   display: none;
   align-content: center;
-  padding: 500px 400px;
+  padding: 0;
   overflow: hidden;  
   position: relative;
   background-image: url("../images/Kitchen.png");

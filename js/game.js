@@ -65,10 +65,9 @@ class Game {
                     this.score += this.points;
                 }else if(obstacle=== pomatoJuice){
                     this.lives--
-                }else if (obstacle===){
-
+                }else if (obstacle=== blinky){
+                    this.lives === 0;
                 }
-                this.lives--;
                 document.getElementById('lives').textContent = this.lives;
                 // Update the counter variable to account for the removed obstacle
                 i--;
