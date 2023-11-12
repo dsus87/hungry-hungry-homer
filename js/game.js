@@ -150,6 +150,7 @@ updateHomer(){
           // End the game
             if (this.lives === 0) {
                 this.endGame();
+                audio.pause();
             }
     }
 
@@ -166,6 +167,7 @@ updateHomer(){
     this.gameScreen.style.display = "none";
     // Show end game screen
     this.gameEndScreen.style.display = "block";
+    
   }
 } 
 
