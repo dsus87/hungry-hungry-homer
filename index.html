@@ -16,7 +16,7 @@
         
         <p>In the heart of Springfield, our doughnut-loving hero Homer is on an epic quest for munchies, and he needs your help to chomp his way to glory in "Hungry Hungry Homer." Use the left and right keypad buttons to help Homer catch his favourite foods. But be careful! nuclear waste and yucky greens can appear at any time.</p>
         
-        <button id="start-button">Start Game</button>
+        <button id="start-button"><img src="./images/start-game.png" alt="" id="start-img" /></button>
 
         <p>Use the left and right arrow to control Homer!</p>
 
@@ -29,24 +29,25 @@
           <p>Score: <span id="score">0</span></p>
           <p>Lives: <span id="lives">3</span></p>
         </div>
+
       
 
         <!-- #game-screen is initially hidden using CSS style display: none -->
         <div id="game-screen"></div>
-
+     
         </div>
   
 
       <!-- #game-end is initially hidden using CSS style display: none -->
       <div id="game-end">
 
-        <br /> <img src="./images/game-over-solid.png" alt="" class="game-over-img" /> <br />
+        <br /> <img src="./images/game-over-solid.png" alt="" id="game-over-img" /> <br />
         
         <!-- !!!!!!! Need to put the Score Image and the actual score !!!!!! -->
 
         <P> D'oh! You killed Homer! </P>
 
-        <button id="restart-button"><img src="./images/restart.png" alt="" class="restart-img" /></button> 
+        <button id="restart-button"><img src="./images/restart.png" alt="" id="restart-img" /></button> 
       </div>
     </main>
     <script src="js/player.js"></script>

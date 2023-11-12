@@ -1,7 +1,7 @@
 class Obstacle {
     constructor(gameScreen, name) {
       this.gameScreen = gameScreen;
-      this.left = Math.floor(Math.random() * 950 + 70);
+      this.left = Math.floor(Math.random() * 1000 );
       this.top = 0; // Start above the screen
       this.width = 80;
       this.height = 80;
@@ -32,7 +32,7 @@ class Obstacle {
     }
   
     move() {
-      this.top += 0.25;
+      this.top += 1;
       this.updatePosition();
     }
   }
@@ -61,7 +61,7 @@ class Obstacle {
       this.name = name;
     }
     move() {
-      this.top += 0.5;
+      this.top += 1.25;
       this.updatePosition();
     }
 
@@ -80,8 +80,9 @@ class Obstacle {
       this.element.src = 'images/duff-beer.png';
       this.name = name;
     }
+
     move() {
-      this.top += 1;
+      this.top += 1.5;
       this.updatePosition();
     }
   }
@@ -93,14 +94,18 @@ class Obstacle {
 
 
   //   // Extended class for Pomato-juice
-  //   class pomatoJuice extends Obstacle {
-  //     constructor(gameScreen) {
-  //       super(gameScreen);
-  //       this.points = 0;
-  //       this.speed = 3;
-  //       this.element.src = './images/pomato-juice.png';
-  //      //  this.lives = -1 ;   this needs to be handled somewhere else, peraps in Game or Script.js
-  //     }
+  class Pomato extends Obstacle {
+    constructor(gameScreen, name) {
+      super(gameScreen);
+      this.element.src = 'images/pomato-juice.png';
+      this.name = name;
+    }
+    move() {
+      this.top += 1.75;
+      this.updatePosition();
+    }
+
+  }
     
   //     static shouldSpawn() {
   //       return Math.random() < 0.9; // 90% chance to spawn
@@ -109,18 +114,18 @@ class Obstacle {
 
   //     // Extended class for blinky 
   
-  //     class blinky extends Obstacle {
-  //       constructor(gameScreen) {
-  //         super(gameScreen);
-  //         this.points = 0;
-  //         this.speed = 3;
-  //         this.element.src = './images/pomato-juice.png';
-  //        //  this.lives = -1 ;   this needs to be handled somewhere else, peraps in Game or Script.js
-  //       }
-      
-  //       static shouldSpawn() {
-  //         return Math.random() < 0.9; // 90% chance to spawn
-  //       }
+  class Blinky extends Obstacle {
+    constructor(gameScreen, name) {
+      super(gameScreen);
+      this.element.src = 'images/blinky.png';
+      this.name = name;
+    }
+    move() {
+      this.top += 2;
+      this.updatePosition();
+    }
+
+  }
   //     }
 
 
