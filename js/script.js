@@ -23,7 +23,7 @@ window.onload = function () {
     setInterval(function() {
       movementSpeedLeft  -= 1.5; 
       movementSpeedRight += 1.5; 
-    }, 10000); 
+    }, 5000); 
       
     }
   

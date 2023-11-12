@@ -4,6 +4,7 @@ class Game {
         this.startScreen = document.getElementById('game-intro');
         this.gameScreen = document.getElementById('game-screen');
         this.gameEndScreen = document.getElementById('game-end');
+        this.scoring= document.getElementById('scoring');
         this.player = new Player(
             this.gameScreen,
             900,
@@ -33,7 +34,10 @@ class Game {
         this.startScreen.style.display = 'none';
         this.gameScreen.style.display = 'block';
         this.gameLoop();
-        // Car start at a specific position
+        this.scoring.style.position = '';
+        this.scoring.style.marginRight = '50px'
+        this.scoring.style.boxSizing = 'border box'
+        // Homer starts at a specific position
         // Obstacles are going to be at a specific position as well
     }
 
@@ -58,8 +62,8 @@ class Game {
     }
 
 
-updateHomer(){
-    this.player.move();
+    updateHomer(){
+        this.player.move();
 
     }    
 
@@ -93,20 +97,20 @@ updateHomer(){
     // Create a new obstacle based on a random probability
 
     // when there is no other obstacles on the screen
-        if (Math.random() > 0.995 && this.obstacles.length < 12) {
+        if (Math.random() > 0.935 && this.obstacles.length < 3) {
             this.obstacles.push(new Obstacle(this.gameScreen,"Donut")); 
         }
        // here we are calling donuts, similar logic for sandwich etc..
-        if (Math.random() > 0.995 && this.obstacles.length < 2) {
+        if (Math.random() > 0.950 && this.obstacles.length < 3) {
             this.obstaclesRibWich.push (new Sandwich(this.gameScreen,"Ribwich")); 
         } 
-        if (Math.random() > 0.995 && this.obstacles.length < 2) {
+        if (Math.random() > 0.965 && this.obstacles.length < 3) {
             this.obstaclesBeer.push (new Beer(this.gameScreen,"Beer")); 
         }
-        if (Math.random() > 0.995 && this.obstacles.length < 2) {
+        if (Math.random() > 0.980 && this.obstacles.length < 3) {
             this.obstaclesPomato.push (new Pomato(this.gameScreen,"Pomato")); 
         }
-        if (Math.random() > 0.995 && this.obstacles.length < 2) {
+        if (Math.random() > 0.995 && this.obstacles.length < 3) {
             this.obstaclesBlinky.push (new Blinky (this.gameScreen,"Blinky")); 
         }
     }
