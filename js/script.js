@@ -27,7 +27,7 @@ window.onload = function () {
     setInterval(function() {
       movementSpeedLeft  -= 1.5; 
       movementSpeedRight += 1.5; 
-    }, 5000); 
+    }, 10000); 
       
     }
   
@@ -67,16 +67,16 @@ window.onload = function () {
   audio.volume = 0.1;
 
   let soundDonut = new Audio("./audio/mmm-donuts.wav");
-  sound.volume = 0.2;
+  soundDonut.volume = 0.1;
 
   let soundBeer = new Audio("./audio/mmm-beer.wav");
-  sound.volume = 0.2;
+  soundBeer.volume = 0.1;
 
   let soundHam = new Audio("./audio/mmm-ham.wav");
-  sound.volume = 0.2;
+  soundHam.volume = 0.1;
 
   let soundDeath = new Audio("./audio/argh-death.wav");
-  sound.volume = 0.2;
+  soundDeath.volume = 0.1;
 
   let soundPomatoJuice = new Audio("./audio/doh.wav");
-  sound.volume = 0.2;
+  soundPomatoJuice.volume = 0.1;

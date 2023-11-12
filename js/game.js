@@ -97,20 +97,20 @@ class Game {
     // Create a new obstacle based on a random probability
 
     // when there is no other obstacles on the screen
-        if (Math.random() > 0.935 && this.obstacles.length < 3) {
+        if (Math.random() > 0.935 && this.obstacles.length < 1) {
             this.obstacles.push(new Obstacle(this.gameScreen,"Donut")); 
         }
        // here we are calling donuts, similar logic for sandwich etc..
-        if (Math.random() > 0.950 && this.obstacles.length < 3) {
+        if (Math.random() > 0.950 && this.obstacles.length < 1) {
             this.obstaclesRibWich.push (new Sandwich(this.gameScreen,"Ribwich")); 
         } 
-        if (Math.random() > 0.965 && this.obstacles.length < 3) {
+        if (Math.random() > 0.965 && this.obstacles.length < 1) {
             this.obstaclesBeer.push (new Beer(this.gameScreen,"Beer")); 
         }
-        if (Math.random() > 0.980 && this.obstacles.length < 3) {
+        if (Math.random() > 0.980 && this.obstacles.length < 1) {
             this.obstaclesPomato.push (new Pomato(this.gameScreen,"Pomato")); 
         }
-        if (Math.random() > 0.995 && this.obstacles.length < 3) {
+        if (Math.random() > 0.995 && this.obstacles.length < 1) {
             this.obstaclesBlinky.push (new Blinky (this.gameScreen,"Blinky")); 
         }
     }
@@ -132,18 +132,25 @@ class Game {
                     // Reduce player's lives by 1
                     if (obstacle.name === "Donut"){
                         this.score += 100;
+                        soundDonut.play();
                         
                     }else if(obstacle.name === "Ribwich"){   // needs to be checked with the name
                         this.score += 150;
+                        soundHam.play();
 
                     }else if(obstacle.name === "Beer"){
                         this.score += 200;
+                        soundBeer.play();
 
                     }else if(obstacle.name === "Pomato"){
-                        this.lives--
+                        this.lives--;
+                        soundPomatoJuice.play();
+
                     }else if (obstacle.name === "Blinky"){
                         this.lives = 0;
+                        asoundDeat.play(h);
                     }
+
                     document.getElementById('lives').textContent = this.lives;
                     document.getElementById('score').textContent = this.score;
                     // Update the counter variable to account for the removed obstacle
