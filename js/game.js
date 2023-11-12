@@ -58,7 +58,7 @@ class Game {
         this.didPlayerCollide(this.obstaclesBlinky);
 
         // this.gameLoop()
-        window.requestAnimationFrame(()=>  this.gameLoop()); // used to improve/better manage the rate of frames for the game animation
+        window.requestAnimationFrame(()=> this.gameLoop()); // used to improve/better manage the rate of frames for the game animation
     }
 
 
@@ -148,7 +148,7 @@ class Game {
 
                     }else if (obstacle.name === "Blinky"){
                         this.lives = 0;
-                        asoundDeat.play(h);
+                        soundDeath.play(h);
                     }
 
                     document.getElementById('lives').textContent = this.lives;
