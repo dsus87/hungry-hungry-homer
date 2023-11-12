@@ -154,6 +154,7 @@ class Game {
           // End the game
             if (this.lives === 0) {
                 this.endGame();
+                audio.pause();
             }
     }
 
@@ -170,6 +171,7 @@ class Game {
     this.gameScreen.style.display = "none";
     // Show end game screen
     this.gameEndScreen.style.display = "block";
+    
   }
 } 
 
