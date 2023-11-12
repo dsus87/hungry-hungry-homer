@@ -99,6 +99,7 @@ class Obstacle {
       super(gameScreen);
       this.element.src = 'images/pomato-juice.png';
       this.name = name;
+      
     }
     move() {
       this.top += 1.75;

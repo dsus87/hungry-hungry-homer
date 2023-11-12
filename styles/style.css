@@ -19,7 +19,10 @@ body {
   src: url(../font/akbar.ttf);
   color:  #fbfb4b ;
   background-size: cover; 
-  font-size: large;
+  font-size: xx-large;
+  background-image: url("../images/Clouds.jpg");
+  height: 100vw;
+
  
   
 }
@@ -93,12 +96,12 @@ body button {
 }
 
 .score-img{
-  width:50px;
+  width:80px;
   padding-right: 5px;
 }
 
 .lives-img{
-  width:50px;
+  width:80px;
 }
 
 .scoring{
