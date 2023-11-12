@@ -10,11 +10,20 @@ window.onload = function () {
     restartButton.addEventListener("click", function () {
       restartGame();
     });
+
+    let movementSpeedLeft = -1.5;
+    let movementSpeedRight = 1.5;
+
    
     function startGame() {
       console.log("start game");
       game = new Game(); // create an instance of the Game class
       game.start(); // execute the start method
+
+    setInterval(function() {
+      movementSpeedLeft  -= 1.5; 
+      movementSpeedRight += 1.5; 
+    }, 10000); 
       
     }
   
@@ -34,10 +43,10 @@ window.onload = function () {
          
         switch (key) {
           case "ArrowLeft":
-            game.player.directionX = -7.5;
+            game.player.directionX = movementSpeedLeft;
             break;
-          case "ArrowRight":
-            game.player.directionX = 7.5;
+         case "ArrowRight":
+            game.player.directionX = movementSpeedRight;
             break;
         }
       }

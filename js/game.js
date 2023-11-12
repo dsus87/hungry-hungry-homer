@@ -97,16 +97,16 @@ updateHomer(){
             this.obstacles.push(new Obstacle(this.gameScreen,"Donut")); 
         }
        // here we are calling donuts, similar logic for sandwich etc..
-        if (Math.random() > 0.995 && this.obstacles.length < 12) {
+        if (Math.random() > 0.995 && this.obstacles.length < 2) {
             this.obstaclesRibWich.push (new Sandwich(this.gameScreen,"Ribwich")); 
         } 
-        if (Math.random() > 0.995 && this.obstacles.length < 12) {
+        if (Math.random() > 0.995 && this.obstacles.length < 2) {
             this.obstaclesBeer.push (new Beer(this.gameScreen,"Beer")); 
         }
-        if (Math.random() > 0.995 && this.obstacles.length < 12) {
+        if (Math.random() > 0.995 && this.obstacles.length < 2) {
             this.obstaclesPomato.push (new Pomato(this.gameScreen,"Pomato")); 
         }
-        if (Math.random() > 0.995 && this.obstacles.length < 12) {
+        if (Math.random() > 0.995 && this.obstacles.length < 2) {
             this.obstaclesBlinky.push (new Blinky (this.gameScreen,"Blinky")); 
         }
     }
