@@ -21,10 +21,6 @@ body {
   background-size: cover; 
   font-size: xx-large;
   background-image: url("../images/Clouds.jpg");
-  
-
- 
-  
 }
 
 #game-screen {
@@ -44,7 +40,7 @@ body {
 
 #game-end {
   display: none;
-  padding: 200px 400px;
+  padding: 0px;
   background-image: url("../images/Clouds.jpg");
   background-size: cover;
   font-size: 58px;

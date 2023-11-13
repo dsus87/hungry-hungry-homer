@@ -5,6 +5,8 @@ class Game {
         this.gameScreen = document.getElementById('game-screen');
         this.gameEndScreen = document.getElementById('game-end');
         this.scoring= document.getElementById('scoring');
+        this.gameContainer = document.getElementById('game-container');
+        this.page = document.html;
         this.player = new Player(
             this.gameScreen,
             900,
@@ -118,20 +120,20 @@ class Game {
 
     if (totalObstacles < maxObstacles){
 
-        if (Math.random() > 0.99 && this.obstacles.length < 1) {
+        if (Math.random() > 0.89 && this.obstacles.length < 1) {
             this.obstacles.push(new Obstacle(this.gameScreen,"Donut")); 
         }
        // here we are calling donuts, similar logic for sandwich etc..
-        if (Math.random() > 0.950 && this.obstacles.length < 1) {
+        if (Math.random() > 0.91 && this.obstacles.length < 1) {
             this.obstaclesRibWich.push (new Sandwich(this.gameScreen,"Ribwich")); 
         } 
-        if (Math.random() > 0.98 && this.obstacles.length < 1) {
+        if (Math.random() > 0.93 && this.obstacles.length < 1) {
             this.obstaclesBeer.push (new Beer(this.gameScreen,"Beer")); 
         }
-        if (Math.random() > 0.980 && this.obstacles.length < 1) {
+        if (Math.random() > 0.95 && this.obstacles.length < 1) {
             this.obstaclesPomato.push (new Pomato(this.gameScreen,"Pomato")); 
         }
-        if (Math.random() > 0.995 && this.obstacles.length < 1) {
+        if (Math.random() > 0.97 && this.obstacles.length < 1) {
             this.obstaclesBlinky.push (new Blinky (this.gameScreen,"Blinky")); 
         }
     }
@@ -215,7 +217,8 @@ class Game {
     this.gameScreen.style.display = "none";
     // Show end game screen
     this.gameEndScreen.style.display = "block";
-    
+    this.scoring.style.margin = '0px'
+    this.scoring.style.padding = '0px'
   }
 } 
 
