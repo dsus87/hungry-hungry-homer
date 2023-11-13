@@ -98,7 +98,26 @@ class Game {
 
     // Create a new obstacle based on a random probability
 
+
+    // control amount of obstacles on screen 
+
+    let totalObstacles = this.obstacles.length + this.obstaclesRibWich.length +
+        this.obstaclesBeer.length + this.obstaclesPomato.length +
+        this.obstaclesBlinky.length;
+
+    let  maxObstacles = 3;
+
+    // increase difficulty
+    setInterval(function() {
+        maxObstacles  += 1; 
+      }, 10000); 
+
+
     // when there is no other obstacles on the screen
+
+
+    if (totalObstacles < maxObstacles){
+
         if (Math.random() > 0.99 && this.obstacles.length < 1) {
             this.obstacles.push(new Obstacle(this.gameScreen,"Donut")); 
         }
@@ -115,6 +134,12 @@ class Game {
         if (Math.random() > 0.995 && this.obstacles.length < 1) {
             this.obstaclesBlinky.push (new Blinky (this.gameScreen,"Blinky")); 
         }
+    }
+
+ 
+
+
+
     }
 
     
@@ -171,6 +196,14 @@ class Game {
 
 
    // Interval to randomize falling objects
+
+
+
+// control total objects on screen 
+
+
+
+
 
 
     // Create a new method responsible for ending the game
