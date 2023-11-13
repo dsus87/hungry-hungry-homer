@@ -21,7 +21,7 @@ body {
   background-size: cover; 
   font-size: xx-large;
   background-image: url("../images/Clouds.jpg");
-  height: 100vw;
+  
 
  
   
@@ -47,7 +47,7 @@ body {
   padding: 200px 400px;
   background-image: url("../images/Clouds.jpg");
   background-size: cover;
-  font-size: 24px;
+  font-size: 58px;
   font-family: akbar;
 }
 

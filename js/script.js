@@ -66,17 +66,17 @@ window.onload = function () {
   let audio = new Audio("./sound/intro-end-song.mp3");
   audio.volume = 0.1;
 
-  let soundDonut = new Audio("./audio/mmm-donuts.wav");
-  soundDonut.volume = 0.1;
+  let soundDonut = new Audio("./sound/mmm-donuts.mp3");
+  soundDonut.volume = 0.2;
 
-  let soundBeer = new Audio("./audio/mmm-beer.wav");
+  let soundBeer = new Audio("./sound/mmm-beer.mp3");
   soundBeer.volume = 0.1;
 
-  let soundHam = new Audio("./audio/mmm-ham.wav");
+  let soundHam = new Audio("./sound/mmm-ham.mp3");
   soundHam.volume = 0.1;
 
-  let soundDeath = new Audio("./audio/argh-death.wav");
+  let soundDeath = new Audio("./sound/argh-death.mp3");
   soundDeath.volume = 0.1;
 
-  let soundPomatoJuice = new Audio("./audio/doh.wav");
-  soundPomatoJuice.volume = 0.1;
+  let soundPomatoJuice = new Audio("./sound/doh.mp3");
+  soundPomatoJuice.volume = 0.2;

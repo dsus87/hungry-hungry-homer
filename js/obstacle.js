@@ -122,7 +122,7 @@ class Obstacle {
       this.name = name;
     }
     move() {
-      this.top += 2;
+      this.top += 1;
       this.updatePosition();
     }
 

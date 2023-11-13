@@ -46,6 +46,8 @@ class Game {
         if(this.gameIsOver === true){
             return;
         }
+
+
         console.log('gameLoop exec')
         this.updateHomer();
         this.update();// update the game
@@ -97,14 +99,14 @@ class Game {
     // Create a new obstacle based on a random probability
 
     // when there is no other obstacles on the screen
-        if (Math.random() > 0.935 && this.obstacles.length < 1) {
+        if (Math.random() > 0.99 && this.obstacles.length < 1) {
             this.obstacles.push(new Obstacle(this.gameScreen,"Donut")); 
         }
        // here we are calling donuts, similar logic for sandwich etc..
         if (Math.random() > 0.950 && this.obstacles.length < 1) {
             this.obstaclesRibWich.push (new Sandwich(this.gameScreen,"Ribwich")); 
         } 
-        if (Math.random() > 0.965 && this.obstacles.length < 1) {
+        if (Math.random() > 0.98 && this.obstacles.length < 1) {
             this.obstaclesBeer.push (new Beer(this.gameScreen,"Beer")); 
         }
         if (Math.random() > 0.980 && this.obstacles.length < 1) {
@@ -148,7 +150,8 @@ class Game {
 
                     }else if (obstacle.name === "Blinky"){
                         this.lives = 0;
-                        soundDeath.play(h);
+                        soundDeath.play();
+                      
                     }
 
                     document.getElementById('lives').textContent = this.lives;
@@ -159,9 +162,10 @@ class Game {
             }
 
           // End the game
-            if (this.lives === 0) {
+            if (this.lives <= 0) {
                 this.endGame();
                 audio.pause();
+                
             }
     }
 
