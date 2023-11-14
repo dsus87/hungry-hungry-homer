@@ -67,7 +67,7 @@ window.onload = function () {
   audio.volume = 0.1;
 
   let soundDonut = new Audio("./sound/mmm-donuts.mp3");
-  soundDonut.volume = 0.2;
+  soundDonut.volume = 0.1;
 
   let soundBeer = new Audio("./sound/mmm-beer.mp3");
   soundBeer.volume = 0.1;
@@ -79,4 +79,4 @@ window.onload = function () {
   soundDeath.volume = 0.1;
 
   let soundPomatoJuice = new Audio("./sound/doh.mp3");
-  soundPomatoJuice.volume = 0.2;
+  soundPomatoJuice.volume = 0.1;

@@ -13,6 +13,9 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	outline: 0;
 	background: transparent;
   text-align: center;
+  justify-content: center;
+  justify-items: center;
+  justify-self: center;
 }
 
 @font-face {
@@ -21,7 +24,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 
 #game-intro {
-  padding: 160px 300px;
+  padding: 170px 300px;
   background-image: url("../images/Clouds.jpg");
   background-size: cover;
   display: flex;
@@ -32,6 +35,8 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 
 #game-intro p {
   margin: 20px 0px;
+  font-size: 24px;
+  font-family: akbar; 
 }
 
 .logo-img {
@@ -42,56 +47,33 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 #start-img {
   width:326px;
   height: 64.67px;
- }
+}
 
-
-/* #game-container {    /*idk yet what to do with this. Have to put images in HTML ?
-  display: flex;
-  width: 100vw;
-  padding: 0px 0px;
-  justify-content: center;
+#scoring{
+  visibility: hidden;
   font-family: akbar;
-  src: url(../font/akbar.ttf);
-  color:  #fbfb4b ;
-  background-size: cover; 
-  font-size: xx-large;
-  background-image: url("../images/Clouds.jpg");
-} */
+  font-size: x-large;
+  color: #FFF949;
+}
 
 #game-screen {
   display: none;
-  align-content: center;
-  padding: 0;
   overflow: hidden;  
-  position: relative;
+  position: center;
   background-image: url("../images/Kitchen.png");
   background-size: cover;
-
+  background-position: center;
+  justify-content: center;
 }
-
-/*position: absolute
-30% first child - score and lives. the rest - food drop*/
-
 
 #game-end {
   display: none;
-  padding: 0px;
+  padding: 170px 300px;
   background-image: url("../images/Clouds.jpg");
   background-size: cover;
   font-size: 58px;
   font-family: akbar;
 }
-
-
-
-#game-intro p {
-  font-size: 24px;
-  font-family: akbar; 
-
-}
-
-
-
 
 .arrows-img {
   width: 150px;
@@ -104,9 +86,7 @@ body button {
   box-shadow: 0;
   border-radius: 15px;
   margin-bottom: 20px;
-
 }
-
 
 #restart-img{
   width: 200px;
@@ -124,8 +104,4 @@ body button {
 
 .lives-img{
   width:80px;
-}
-
-.scoring{
-  float:inline-start;
 }

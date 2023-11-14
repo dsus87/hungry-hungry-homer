@@ -5,7 +5,9 @@ class Game {
         this.gameScreen = document.getElementById('game-screen');
         this.gameEndScreen = document.getElementById('game-end');
         this.scoring= document.getElementById('scoring');
-        this.gameContainer = document.getElementById('game-container');
+        this.score = document.getElementById('score');
+        console.log(score);
+        this.gameOver = document.getElementById('game-over-img')
         this.player = new Player(
             this.gameScreen,
             900,
@@ -34,6 +36,9 @@ class Game {
         this.gameScreen.style.height = `${this.height}px`;
         this.startScreen.style.display = 'none';
         this.gameScreen.style.display = 'block';
+        this.scoring.style.visibility = 'visible';
+        this.scoring.style.position= 'absolute'
+        this.scoring.style.margin= '10px 20px'
         this.gameLoop();
         // Homer starts at a specific position
         // Obstacles are going to be at a specific position as well
@@ -241,8 +246,7 @@ noCollision(obstaclesArray) {
     this.gameScreen.style.display = "none";
     // Show end game screen
     this.gameEndScreen.style.display = "block";
-    this.scoring.style.margin = '0px'
-    this.scoring.style.padding = '0px'
+    this.gameOver.appendChild(this.score);
   }
 
 }
