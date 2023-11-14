@@ -31,12 +31,7 @@ class Obstacle {
       this.updatePosition();
     }
 
-    noCollision(){
-      if (this.top > this.gameScreen.offsetHeight - this.height - 10) {
-        this.top = this.gameScreen.offsetHeight - this.height - 10;
-        obstaclesArray.splice(i,1);
-      }
-    }
+  
   }
   
   
