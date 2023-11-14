@@ -6,7 +6,6 @@ class Game {
         this.gameEndScreen = document.getElementById('game-end');
         this.scoring= document.getElementById('scoring');
         this.gameContainer = document.getElementById('game-container');
-        this.page = document.html;
         this.player = new Player(
             this.gameScreen,
             900,
@@ -36,9 +35,6 @@ class Game {
         this.startScreen.style.display = 'none';
         this.gameScreen.style.display = 'block';
         this.gameLoop();
-        this.scoring.style.position = '';
-        this.scoring.style.marginRight = '50px'
-        this.scoring.style.boxSizing = 'border box'
         // Homer starts at a specific position
         // Obstacles are going to be at a specific position as well
     }
@@ -68,36 +64,37 @@ class Game {
 
     updateHomer(){
         this.player.move();
-
     }    
 
 
     update(){  //move the player and update the obstacles can be seperated to 2 seperate functions
         for(let i= 0; i < this.obstacles.length; i++){
             const obstacle = this.obstacles[i];
-            obstacle.move();
-                    // Return the new position of the homer to update the game
+            obstacle.move();  // Return the new position of the homer to update the game
         }
         // Return the new positions of the obstacles to update the game
       
         //for loop to update the movement of the sandwich
         for(let i= 0; i < this.obstaclesRibWich.length; i++){
             const obstacle = this.obstaclesRibWich[i];
-                obstacle.move();}
-
+                obstacle.move();
+        }
 
         for(let i= 0; i < this.obstaclesBeer.length; i++){
             const obstacle = this.obstaclesBeer[i];
-                obstacle.move();}
+                obstacle.move();
+        }
         
         for(let i= 0; i < this.obstaclesPomato.length; i++){
             const obstacle = this.obstaclesPomato[i];
-                obstacle.move();}
-
+                obstacle.move();
+        }
+        
         for(let i= 0; i < this.obstaclesBlinky.length; i++){
             const obstacle = this.obstaclesBlinky[i];
-                obstacle.move();}
-
+                obstacle.move(); 
+        }
+    
     // Create a new obstacle based on a random probability
 
 
@@ -107,7 +104,7 @@ class Game {
         this.obstaclesBeer.length + this.obstaclesPomato.length +
         this.obstaclesBlinky.length;
 
-    let  maxObstacles = 3;
+    let  maxObstacles = 7;
 
     // increase difficulty
     setInterval(function() {
@@ -120,29 +117,25 @@ class Game {
 
     if (totalObstacles < maxObstacles){
 
-        if (Math.random() > 0.89 && this.obstacles.length < 1) {
+        if (Math.random() > 0.89) {
             this.obstacles.push(new Obstacle(this.gameScreen,"Donut")); 
         }
        // here we are calling donuts, similar logic for sandwich etc..
-        if (Math.random() > 0.91 && this.obstacles.length < 1) {
+        if (Math.random() > 0.91) {
             this.obstaclesRibWich.push (new Sandwich(this.gameScreen,"Ribwich")); 
         } 
-        if (Math.random() > 0.93 && this.obstacles.length < 1) {
+        if (Math.random() > 0.93) {
             this.obstaclesBeer.push (new Beer(this.gameScreen,"Beer")); 
         }
-        if (Math.random() > 0.95 && this.obstacles.length < 1) {
+        if (Math.random() > 0.95) {
             this.obstaclesPomato.push (new Pomato(this.gameScreen,"Pomato")); 
         }
-        if (Math.random() > 0.97 && this.obstacles.length < 1) {
+        if (Math.random() > 0.97) {
             this.obstaclesBlinky.push (new Blinky (this.gameScreen,"Blinky")); 
         }
     }
+}
 
- 
-
-
-
-    }
 
     
 // pass as argument the array
@@ -158,26 +151,35 @@ class Game {
                     obstacle.element.remove();
                     // Remove obstacle object from the array
                     obstaclesArray.splice(i, 1);
+
                     // Reduce player's lives by 1
                     if (obstacle.name === "Donut"){
                         this.score += 100;
                         soundDonut.play();
-                        
+                      
+                       
                     }else if(obstacle.name === "Ribwich"){   // needs to be checked with the name
                         this.score += 150;
                         soundHam.play();
+                       
+                     
 
                     }else if(obstacle.name === "Beer"){
                         this.score += 200;
                         soundBeer.play();
+                       
+                     
 
                     }else if(obstacle.name === "Pomato"){
                         this.lives--;
                         soundPomatoJuice.play();
+                     
+                      
 
                     }else if (obstacle.name === "Blinky"){
                         this.lives = 0;
                         soundDeath.play();
+                       
                       
                     }
 
@@ -185,8 +187,8 @@ class Game {
                     document.getElementById('score').textContent = this.score;
                     // Update the counter variable to account for the removed obstacle
                     i--;
-                } 
-            }
+                }
+            };
 
           // End the game
             if (this.lives <= 0) {
@@ -220,6 +222,6 @@ class Game {
     this.scoring.style.margin = '0px'
     this.scoring.style.padding = '0px'
   }
-} 
 
+}
 

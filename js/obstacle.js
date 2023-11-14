@@ -35,6 +35,13 @@ class Obstacle {
       this.top += 1;
       this.updatePosition();
     }
+
+    noCollision(){
+      if (this.top > this.gameScreen.offsetHeight - this.height - 10) {
+        this.top = this.gameScreen.offsetHeight - this.height - 10;
+        obstaclesArray.splice(i,1);
+      }
+    }
   }
   
   // // Extended class for Donut
@@ -85,6 +92,8 @@ class Obstacle {
       this.top += 1.5;
       this.updatePosition();
     }
+
+
   }
   
   //   // static shouldSpawn() {
@@ -105,6 +114,7 @@ class Obstacle {
       this.top += 1.75;
       this.updatePosition();
     }
+
 
   }
     
