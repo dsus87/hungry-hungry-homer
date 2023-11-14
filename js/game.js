@@ -104,7 +104,7 @@ class Game {
         this.obstaclesBeer.length + this.obstaclesPomato.length +
         this.obstaclesBlinky.length;
 
-    let  maxObstacles = 7;
+    let  maxObstacles = 5;
 
     // increase difficulty
     setInterval(function() {
@@ -136,8 +136,24 @@ class Game {
 
 
     }
+
+        this.noCollision(this.obstacles);
+        this.noCollision(this.obstaclesRibWich);
+        this.noCollision(this.obstaclesBeer);
+        this.noCollision(this.obstaclesPomato);
+        this.noCollision(this.obstaclesBlinky);
+
 }
 
+noCollision(obstaclesArray) {
+    for (let i = 0; i < obstaclesArray.length; i++) {
+        if (obstaclesArray[i].top > this.gameScreen.offsetHeight - obstaclesArray[i].height - 10) {
+            obstaclesArray[i].element.remove(); 
+            obstaclesArray.splice(i, 1);
+            i--;
+        }
+    }
+    }
 
     
 // pass as argument the array
@@ -191,6 +207,10 @@ class Game {
                     i--;
                 }
             };
+
+        
+
+            
 
           // End the game
             if (this.lives <= 0) {
