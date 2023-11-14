@@ -1,16 +1,51 @@
-body {
-  padding: 0;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	background: transparent;
   text-align: center;
 }
 
-#game-intro {
-  padding: 100px 300px;
-  background-image: url("../images/Clouds.jpg");
-  background-size: cover; 
-
+@font-face {
+  font-family: akbar;
+  src: url(../font/akbar.ttf);
 }
 
-#game-container {    /*idk yet what to do with this. Have to put images in HTML ?*/
+#game-intro {
+  padding: 160px 300px;
+  background-image: url("../images/Clouds.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#game-intro p {
+  margin: 20px 0px;
+}
+
+.logo-img {
+  width: 800px;
+  justify-items: center;
+}
+
+#start-img {
+  width:326px;
+  height: 64.67px;
+ }
+
+
+/* #game-container {    /*idk yet what to do with this. Have to put images in HTML ?
   display: flex;
   width: 100vw;
   padding: 0px 0px;
@@ -21,7 +56,7 @@ body {
   background-size: cover; 
   font-size: xx-large;
   background-image: url("../images/Clouds.jpg");
-}
+} */
 
 #game-screen {
   display: none;
@@ -47,21 +82,16 @@ body {
   font-family: akbar;
 }
 
-@font-face {
-  font-family: akbar;
-  src: url(../font/akbar.ttf);
-}
+
 
 #game-intro p {
-  font-size: 18px;
+  font-size: 24px;
   font-family: akbar; 
+
 }
 
 
-.logo-img {
-  width: 600px;
-  justify-items: center;
-}
+
 
 .arrows-img {
   width: 150px;
@@ -77,11 +107,7 @@ body button {
 
 }
 
-#start-img {
- width:326px;
- height: 64.67;
 
-}
 #restart-img{
   width: 200px;
   height: 64.67px;

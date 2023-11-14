@@ -109,7 +109,7 @@ class Game {
     // increase difficulty
     setInterval(function() {
         maxObstacles  += 1; 
-      }, 10000); 
+      }, 5000); 
 
 
     // when there is no other obstacles on the screen
@@ -133,6 +133,8 @@ class Game {
         if (Math.random() > 0.97) {
             this.obstaclesBlinky.push (new Blinky (this.gameScreen,"Blinky")); 
         }
+
+
     }
 }
 

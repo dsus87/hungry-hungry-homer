@@ -9,46 +9,37 @@
   </head>
   <body>
     <main>
-      <!-- #game-intro is initially shown on the game start screen -->
 
+      <!-- #game-intro is initially shown on the game start screen -->
       <div id="game-intro">
         
         <img src="./images/hungy-homer-title.png" alt="" class="logo-img" /> <br />
-        
         <p>In the heart of Springfield, our doughnut-loving hero Homer is on an epic quest for munchies, and he needs your help to chomp his way to glory in "Hungry Hungry Homer." Use the left and right keypad buttons to help Homer catch his favourite foods. But be careful! nuclear waste and yucky greens can appear at any time.</p>
-        
         <button id="start-button"><img src="./images/start-game.png" alt="" id="start-img" /></button>
-
         <p>Use the left and right arrow to control Homer!</p>
-
         <img src="./images/arrows.png" alt="" class="arrows-img" />        
       
       </div>
 
-      <div id="game-container">
+       
+        <!-- #game-screen is initially hidden using CSS style display: none -->
+      <div id="game-screen">
         <div id="scoring">
           <p><img src="./images/score-img.png" alt="" class="score-img" /><span id="score">0</span></p>
           <p><img src="./images/lives-img.png" alt="" class="lives-img" />  <span id="lives">3</span></p>
         </div>
-        <!-- #game-screen is initially hidden using CSS style display: none -->
-        <div id="game-screen"></div>
-     
-        </div>
+      </div>
   
 
       <!-- #game-end is initially hidden using CSS style display: none -->
       <div id="game-end">
-
-        <br /> <img src="./images/game-over-solid.png" alt="" id="game-over-img" /> <br />
-        
+        <br>
+          <img src="./images/game-over-solid.png" alt="" id="game-over-img" />
+        <br/>
         <!-- !!!!!!! Need to put the Score Image and the actual score !!!!!! -->
-      <br>
-
-        <P> D'oh! You killed Homer! </P>
-         
-      <br>
-      
-
+        <br>
+          <P> D'oh! You killed Homer! </P>
+        <br>
         <button id="restart-button"><img src="./images/restart.png" alt="" id="restart-img" /></button> 
       </div>
     </main>
