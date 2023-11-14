@@ -49,6 +49,10 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   height: 64.67px;
 }
 
+.arrows-img {
+  width: 150px;
+}
+
 #scoring{
   visibility: hidden;
   font-family: akbar;
@@ -61,23 +65,23 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   overflow: hidden;  
   position: center;
   background-image: url("../images/Kitchen.png");
+  background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   background-position: center;
   justify-content: center;
 }
 
 #game-end {
   display: none;
-  padding: 170px 300px;
+  padding: 120px 300px;
   background-image: url("../images/Clouds.jpg");
   background-size: cover;
   font-size: 58px;
   font-family: akbar;
 }
 
-.arrows-img {
-  width: 150px;
-}
+
 
 body button {
   background-color: #c80813ff;
@@ -104,4 +108,5 @@ body button {
 
 .lives-img{
   width:80px;
+  padding-right: 5px;
 }

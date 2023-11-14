@@ -5,19 +5,17 @@ class Game {
         this.gameScreen = document.getElementById('game-screen');
         this.gameEndScreen = document.getElementById('game-end');
         this.scoring= document.getElementById('scoring');
-        this.score = document.getElementById('score');
-        console.log(score);
-        this.gameOver = document.getElementById('game-over-img')
+        this.yourScore =document.getElementById('your-score');
         this.player = new Player(
             this.gameScreen,
-            900,
-            285,
-            182.67,
-            400,
+            1000,
+            325,
+            205.5,
+            450,
             './images/homer-character.png'
         ); //  new Player()
-        this.width = 1280;
-        this.height = 720;
+        this.width = 1450;
+        this.height = 825;
         this.obstacles = []; // new Obstacle()
         this.obstaclesDonut = [];    // new Obstacle()
         this.obstaclesRibWich = [];    // new Obstacle()
@@ -246,7 +244,9 @@ noCollision(obstaclesArray) {
     this.gameScreen.style.display = "none";
     // Show end game screen
     this.gameEndScreen.style.display = "block";
-    this.gameOver.appendChild(this.score);
+    this.yourScore.innerHTML=`Your score ${this.score}`
+    this.yourScore.style.color = '#FFF949';
+    this.yourScore.style.padding = '30px 0px 10px 0px'
   }
 
 }

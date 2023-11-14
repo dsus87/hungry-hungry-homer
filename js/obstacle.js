@@ -3,8 +3,8 @@ class Obstacle {
       this.gameScreen = gameScreen;
       this.left = Math.floor(Math.random() * 1000 );
       this.top = 0; // Start above the screen
-      this.width = 80;
-      this.height = 80;
+      this.width = 90;
+      this.height = 90;
       this.element = document.createElement('img');
 
       this.element.src = './images/donut-asset.png';
