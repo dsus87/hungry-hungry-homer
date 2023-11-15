@@ -1,5 +1,5 @@
 class Game {
-    
+
     // gonna take care of setting elements taking role in the whole game process, screens, position update of player and obstacles,
     // setting changes according to our game dynamics
 
@@ -52,6 +52,9 @@ class Game {
         if(this.gameIsOver === true){
             return;
         }
+
+
+        console.log('gameLoop exec');
         this.updateHomer();// updating homer's position
         this.update();// update the game 
 
@@ -162,6 +165,7 @@ class Game {
         
         for(let i= 0; i < obstaclesArray.length; i++){   
             const obstacle = obstaclesArray[i];
+            console.log(obstacle);
        
             // If the player's collides with an obstacle
                 if (this.player.didCollide(obstacle)) {

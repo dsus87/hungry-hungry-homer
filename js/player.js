@@ -24,6 +24,7 @@ class Player {
       this.left += this.directionX;
       this.top += this.directionY;
 
+        //for the player not to get out of the game frame
         if (this.left < 10) {
           this.left = 10;
         }
@@ -33,18 +34,18 @@ class Player {
           this.top = 10;
         }
   
-      // handles right hand side
-      if (this.left > this.gameScreen.offsetWidth - this.width - 10) {
-        this.left = this.gameScreen.offsetWidth - this.width - 10;
-      }
+        // handles right hand side
+        if (this.left > this.gameScreen.offsetWidth - this.width - 10) {
+          this.left = this.gameScreen.offsetWidth - this.width - 10;
+        }
   
-      // handles bottom side
-      if (this.top > this.gameScreen.offsetHeight - this.height - 10) {
-        this.top = this.gameScreen.offsetHeight - this.height - 10;
-      }
+        // handles bottom side
+        if (this.top > this.gameScreen.offsetHeight - this.height - 10) {
+          this.top = this.gameScreen.offsetHeight - this.height - 10;
+        }
 
-    // Update the player's car position on the screen
-    this.updatePosition();
+      // Update the player's car position on the screen
+      this.updatePosition();
     }
 
     updatePosition(){

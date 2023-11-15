@@ -22,6 +22,7 @@ class Obstacle { // class for the obstacles, starting with the donut and extendi
     updatePosition() {
       this.element.style.left = `${this.left}px`;
       this.element.style.top = `${this.top}px`;
+      console.log('obstacle position', this.element.getBoundingClientRect());
     }
     
     //motion method where it changes its position vertically and then calling out the position update method 
