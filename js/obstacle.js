@@ -88,7 +88,7 @@ class Obstacle {
   class Blinky extends Obstacle {
     constructor(gameScreen, name) {
       super(gameScreen);
-      this.element.src = 'images/blinky.png';
+      this.element.src = 'images/Fishy.png';
       this.name = name;
     }
     move() {
