@@ -1,5 +1,8 @@
 class Game {
-    // code to be added
+    
+    // gonna take care of setting elements taking role in the whole game process, screens, position update of player and obstacles,
+    // setting changes according to our game dynamics
+
     constructor(){
         this.startScreen = document.getElementById('game-intro');
         this.gameScreen = document.getElementById('game-screen');
@@ -8,14 +11,14 @@ class Game {
         this.yourScore =document.getElementById('your-score');
         this.player = new Player(
             this.gameScreen,
-            1000,
-            325,
-            205.5,
-            450,
-            './images/homer-character.png'
+            1000, //left position
+            325,  //top position
+            205.5,  //players width
+            450,    //players height
+            './images/homer-character.png' //img src
         ); //  new Player()
-        this.width = 1450;
-        this.height = 825;
+        this.width = 1450; //games' width
+        this.height = 825; // games' height
         this.obstacles = []; // new Obstacle()
         this.obstaclesDonut = [];    // new Obstacle()
         this.obstaclesRibWich = [];    // new Obstacle()
@@ -29,7 +32,8 @@ class Game {
     }
 
     start(){
-        
+        //set width and height of the game screen, hide game intro to show gamescreen. 
+        //scoring panel being shown too and positioning it
         this.gameScreen.style.width = `${this.width}px`;
         this.gameScreen.style.height = `${this.height}px`;
         this.startScreen.style.display = 'none';
@@ -43,15 +47,13 @@ class Game {
     }
 
     gameLoop(){
+        //method taking place throughout the game, basically its going to check if object and player are colliding since the game is based on this dynamic
         // Right now, always this.gameIsOver === false
         if(this.gameIsOver === true){
             return;
         }
-
-
-        console.log('gameLoop exec')
-        this.updateHomer();
-        this.update();// update the game
+        this.updateHomer();// updating homer's position
+        this.update();// update the game 
 
         this.didPlayerCollide(this.obstacles)
         this.didPlayerCollide(this.obstaclesBeer);
@@ -60,24 +62,25 @@ class Game {
         this.didPlayerCollide(this.obstaclesPomato);
         this.didPlayerCollide(this.obstaclesBlinky);
 
-        // this.gameLoop()
         window.requestAnimationFrame(()=> this.gameLoop()); // used to improve/better manage the rate of frames for the game animation
     }
 
+
+    //move the player and update the obstacles can be seperated to 2 seperate functions
 
     updateHomer(){
         this.player.move();
     }    
 
 
-    update(){  //move the player and update the obstacles can be seperated to 2 seperate functions
+    update(){  // Return the new positions of the obstacles to update the game
+
+
         for(let i= 0; i < this.obstacles.length; i++){
             const obstacle = this.obstacles[i];
-            obstacle.move();  // Return the new position of the homer to update the game
+            obstacle.move();  
         }
-        // Return the new positions of the obstacles to update the game
-      
-        //for loop to update the movement of the sandwich
+
         for(let i= 0; i < this.obstaclesRibWich.length; i++){
             const obstacle = this.obstaclesRibWich[i];
                 obstacle.move();
@@ -97,111 +100,97 @@ class Game {
             const obstacle = this.obstaclesBlinky[i];
                 obstacle.move(); 
         }
-    
-    // Create a new obstacle based on a random probability
 
 
-    // control amount of obstacles on screen 
+        // control amount of obstacles on screen 
 
-    let totalObstacles = this.obstacles.length + this.obstaclesRibWich.length +
-        this.obstaclesBeer.length + this.obstaclesPomato.length +
-        this.obstaclesBlinky.length;
+        let totalObstacles = this.obstacles.length + this.obstaclesRibWich.length + this.obstaclesBeer.length + this.obstaclesPomato.length + his.obstaclesBlinky.length;
+        let  maxObstacles = 5;
 
-    let  maxObstacles = 5;
-
-    // increase difficulty
-    setInterval(function() {
-        maxObstacles  += 1; 
-      }, 5000); 
+        // increase difficulty by increasing the maximum amount of obstacles on screen by one every 5s
+        setInterval(function() {
+         maxObstacles  += 1; 
+        }, 5000); 
 
 
-    // when there is no other obstacles on the screen
+        if (totalObstacles < maxObstacles){
 
-
-    if (totalObstacles < maxObstacles){
-
-        if (Math.random() > 0.89) {
-            this.obstacles.push(new Obstacle(this.gameScreen,"Donut")); 
+            if (Math.random() > 0.89) {
+                this.obstacles.push(new Obstacle(this.gameScreen,"Donut")); 
+            }
+            
+            if (Math.random() > 0.91) {
+                this.obstaclesRibWich.push (new Sandwich(this.gameScreen,"Ribwich")); 
+            } 
+            if (Math.random() > 0.93) {
+                this.obstaclesBeer.push (new Beer(this.gameScreen,"Beer")); 
+            }
+            if (Math.random() > 0.95) {
+                this.obstaclesPomato.push (new Pomato(this.gameScreen,"Pomato")); 
+            }
+            if (Math.random() > 0.97) {
+                this.obstaclesBlinky.push (new Blinky (this.gameScreen,"Blinky")); 
+            }
         }
-       // here we are calling donuts, similar logic for sandwich etc..
-        if (Math.random() > 0.91) {
-            this.obstaclesRibWich.push (new Sandwich(this.gameScreen,"Ribwich")); 
-        } 
-        if (Math.random() > 0.93) {
-            this.obstaclesBeer.push (new Beer(this.gameScreen,"Beer")); 
-        }
-        if (Math.random() > 0.95) {
-            this.obstaclesPomato.push (new Pomato(this.gameScreen,"Pomato")); 
-        }
-        if (Math.random() > 0.97) {
-            this.obstaclesBlinky.push (new Blinky (this.gameScreen,"Blinky")); 
-        }
-
-
-    }
-
+        
+        // calling out the method that takes place when player and obstacle didn't collide for every single obstacle    
         this.noCollision(this.obstacles);
         this.noCollision(this.obstaclesRibWich);
         this.noCollision(this.obstaclesBeer);
         this.noCollision(this.obstaclesPomato);
         this.noCollision(this.obstaclesBlinky);
 
-}
-
-noCollision(obstaclesArray) {
-    for (let i = 0; i < obstaclesArray.length; i++) {
-        if (obstaclesArray[i].top > this.gameScreen.offsetHeight - obstaclesArray[i].height - 10) {
-            obstaclesArray[i].element.remove(); 
-            obstaclesArray.splice(i, 1);
-            i--;
-        }
     }
+
+    // setting new method for when the obstacle and player don't colide. When the object gets to the bottom of the gameScreen, 
+    // the obstacle is eliminated from the DOM and from its type array so that it doesn't affect the maximum obstacles on screen, 
+    // nor random creation interval probability logics
+
+    noCollision(obstaclesArray) {
+        for (let i = 0; i < obstaclesArray.length; i++) {
+            if (obstaclesArray[i].top > this.gameScreen.offsetHeight - obstaclesArray[i].height - 10) {
+                obstaclesArray[i].element.remove(); 
+                obstaclesArray.splice(i, 1);
+                i--;
+            }
+        }
     }
 
     
-// pass as argument the array
+    // pass as argument the array
     didPlayerCollide(obstaclesArray) {
         
         for(let i= 0; i < obstaclesArray.length; i++){   
             const obstacle = obstaclesArray[i];
-            console.log(obstacle)
        
-            // If the player's car collides with an obstacle
+            // If the player's collides with an obstacle
                 if (this.player.didCollide(obstacle)) {
                     // Remove the obstacle element from the DOM
                     obstacle.element.remove();
                     // Remove obstacle object from the array
                     obstaclesArray.splice(i, 1);
 
-                    // Reduce player's lives by 1
+                    // when collision occurs, set updates according to what obstacle is and play its respective audio
                     if (obstacle.name === "Donut"){
                         this.score += 100;
                         soundDonut.play();
-                      
-                       
-                    }else if(obstacle.name === "Ribwich"){   // needs to be checked with the name
+                         
+                    }else if(obstacle.name === "Ribwich"){   
                         this.score += 150;
                         soundHam.play();
                        
-                     
-
                     }else if(obstacle.name === "Beer"){
                         this.score += 200;
                         soundBeer.play();
                        
-                     
-
                     }else if(obstacle.name === "Pomato"){
                         this.lives--;
                         soundPomatoJuice.play();
-                     
-                      
 
                     }else if (obstacle.name === "Blinky"){
                         this.lives = 0;
                         soundDeath.play();
-                       
-                      
+                    
                     }
 
                     document.getElementById('lives').textContent = this.lives;
@@ -211,43 +200,27 @@ noCollision(obstaclesArray) {
                 }
             };
 
-        
-
-            
-
-          // End the game
+            // End the game and stop the music
             if (this.lives <= 0) {
                 this.endGame();
                 audio.pause();
-                
             }
     }
 
-
-   // Interval to randomize falling objects
-
-
-
-// control total objects on screen 
-
-
-
-
-
-
     // Create a new method responsible for ending the game
-  endGame() {
-    this.player.element.remove(); // remove the player car from the screen
-    this.obstacles.forEach(obstacle => obstacle.element.remove()); // remove the obstacles from the screen
-    this.gameIsOver = true; // cancel the execution of gameLoop()
-    // Hide game screen
-    this.gameScreen.style.display = "none";
-    // Show end game screen
-    this.gameEndScreen.style.display = "block";
-    this.yourScore.innerHTML=`Your score ${this.score}`
-    this.yourScore.style.color = '#FFF949';
-    this.yourScore.style.padding = '30px 0px 10px 0px'
-  }
+    endGame() {
+        this.player.element.remove(); // remove Homer from the screen
+        this.obstacles.forEach(obstacle => obstacle.element.remove()); // remove the obstacles from the screen
+        this.gameIsOver = true; // cancel the execution of gameLoop()
+        // Hide game screen
+        this.gameScreen.style.display = "none";
+        // Show end game screen
+        this.gameEndScreen.style.display = "block";
+        // using DOM to add the score in the empty heading tag and styling it
+        this.yourScore.innerHTML=`Your score ${this.score}`
+        this.yourScore.style.color = '#FFF949';
+        this.yourScore.style.padding = '30px 0px 10px 0px'
+    }
 
 }
 

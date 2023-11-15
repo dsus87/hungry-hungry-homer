@@ -1,5 +1,5 @@
 class Player {
-    // to be defined later on
+    // file where we gonna take care of players functionality
     constructor(gameScreen, left, top, width, height, imgSrc){
         this.gameScreen = gameScreen;
         this.left = left;
@@ -8,31 +8,30 @@ class Player {
         this.height = height;
         this.directionX = 0;
         this.directionY = 0;
+        //using DOM to add our character Homer which is going to be child of gameScreen div
         this.element = document.createElement('img');
-
         this.element.src = imgSrc;
         this.element.style.position = 'absolute';
         this.element.style.width = `${width}px`;
         this.element.style.height = `${height}px`;
         this.element.style.top = `${top}px`;
         this.element.style.left = `${left}px`;
-        
         this.gameScreen.appendChild(this.element);
     }
 
     move(){
         // Update player's position based on directionX and directionY
-    this.left += this.directionX;
-    this.top += this.directionY;
+      this.left += this.directionX;
+      this.top += this.directionY;
 
-    if (this.left < 10) {
-        this.left = 10;
-      }
+        if (this.left < 10) {
+          this.left = 10;
+        }
   
-      // handles top side
-      if (this.top < 10) {
-        this.top = 10;
-      }
+        // handles top side
+        if (this.top < 10) {
+          this.top = 10;
+        }
   
       // handles right hand side
       if (this.left > this.gameScreen.offsetWidth - this.width - 10) {
