@@ -24,49 +24,45 @@ class Player {
       this.left += this.directionX;
       this.top += this.directionY;
 
-        //for the player not to get out of the game frame
+        //for the player not to get out of the left side game frame
         if (this.left < 10) {
           this.left = 10;
         }
   
-        // handles top side
-        if (this.top < 10) {
-          this.top = 10;
-        }
-  
-        // handles right hand side
+        // for the player not to get out of the right side game frame
         if (this.left > this.gameScreen.offsetWidth - this.width - 10) {
           this.left = this.gameScreen.offsetWidth - this.width - 10;
-        }
-  
-        // handles bottom side
-        if (this.top > this.gameScreen.offsetHeight - this.height - 10) {
-          this.top = this.gameScreen.offsetHeight - this.height - 10;
-        }
+        };
 
-      // Update the player's car position on the screen
+      // Update hommers' position on the screen
       this.updatePosition();
     }
 
+    //updating position after changing position values with .move() method
     updatePosition(){
         this.element.style.left = `${this.left}px`;
         this.element.style.top = `${this.top}px`;
         console.log('player position', this.element.getBoundingClientRect())
     }
 
+    //establish the conditions of collision
     didCollide(obstacle) {
+
+      //.getBoundingCLientRect() method returns the elements size and its relative position on the screen
       const playerRect = this.element.getBoundingClientRect();
       const obstacleRect = obstacle.element.getBoundingClientRect();
   
       if (
+        //when obstacle collides with the player from the players' right side
         playerRect.left < obstacleRect.right &&
+        //when the obstacle collides with the player from the playerr' left side 
         playerRect.right > obstacleRect.left &&
-        playerRect.top < obstacleRect.bottom &&
+        //when the obstacle collides with the player from the upper side of the player
         playerRect.bottom > obstacleRect.top
       ) {
-        return true;
+        return true; // obstacle and player did collide if any of the statements inside the if conditional occurs
       } else {
-        return false;
+        return false; // collision didn't occur
       }
     }
 }

@@ -107,7 +107,7 @@ class Game {
 
         // control amount of obstacles on screen 
 
-        let totalObstacles = this.obstacles.length + this.obstaclesRibWich.length + this.obstaclesBeer.length + this.obstaclesPomato.length + his.obstaclesBlinky.length;
+        let totalObstacles = this.obstacles.length + this.obstaclesRibWich.length + this.obstaclesBeer.length + this.obstaclesPomato.length + this.obstaclesBlinky.length;
         let  maxObstacles = 5;
 
         // increase difficulty by increasing the maximum amount of obstacles on screen by one every 5s

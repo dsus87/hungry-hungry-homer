@@ -24,7 +24,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 
 #game-intro {
-  padding: 170px 300px;
+  padding: 180px 300px;
   background-image: url("../images/Clouds.jpg");
   background-size: cover;
   display: flex;
