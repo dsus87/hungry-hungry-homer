@@ -39,7 +39,7 @@ class Obstacle { // class for the obstacles, starting with the donut and extendi
   class Sandwich extends Obstacle {
     constructor(gameScreen, name) {
       super(gameScreen);
-      this.element.src = 'images/ribwich.png';
+      this.element.src = './images/ribwich.png';
       this.name = name;
     }
 
@@ -54,7 +54,7 @@ class Obstacle { // class for the obstacles, starting with the donut and extendi
   class Beer extends Obstacle {
     constructor(gameScreen, name) {
       super(gameScreen);
-      this.element.src = 'images/duff-beer.png';
+      this.element.src = './images/duff-beer.png';
       this.name = name;
     }
 
@@ -70,7 +70,7 @@ class Obstacle { // class for the obstacles, starting with the donut and extendi
   class Pomato extends Obstacle {
     constructor(gameScreen, name) {
       super(gameScreen);
-      this.element.src = 'images/pomato-juice.png';
+      this.element.src = './images/pomato-juice.png';
       this.name = name;
       
     }
@@ -87,7 +87,7 @@ class Obstacle { // class for the obstacles, starting with the donut and extendi
   class Blinky extends Obstacle {
     constructor(gameScreen, name) {
       super(gameScreen);
-      this.element.src = 'images/blinky.png';
+      this.element.src = './images/blinky.png';
       this.name = name;
     }
     move() {
