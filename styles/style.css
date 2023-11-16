@@ -67,9 +67,9 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   background-image: url("../images/Kitchen.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
   background-position: center;
   justify-content: center;
+  max-width: 100% 
 }
 
 #game-end {
