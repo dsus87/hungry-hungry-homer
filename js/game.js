@@ -27,7 +27,7 @@ class Game {
         this.obstaclesBlinky = [];
      
         this.score = 0;
-        this.lives = 3;
+        this.lives = 5;
         this.gameIsOver = false;
     }
 
@@ -108,7 +108,7 @@ class Game {
         // control amount of obstacles on screen 
 
         let totalObstacles = this.obstacles.length + this.obstaclesRibWich.length + this.obstaclesBeer.length + this.obstaclesPomato.length + this.obstaclesBlinky.length;
-        let  maxObstacles = 5;
+        let  maxObstacles = 2;
 
         // increase difficulty by increasing the maximum amount of obstacles on screen by one every 5s
         setInterval(function() {
