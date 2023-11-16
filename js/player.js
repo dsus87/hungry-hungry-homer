@@ -54,11 +54,11 @@ class Player {
 
     if (
       //when obstacle collides with the player from the players' right side
-      playerRect.left < obstacleRect.right &&
+      playerRect.left + 30< obstacleRect.right &&
       //when the obstacle collides with the player from the playerr' left side 
-      playerRect.right > obstacleRect.left &&
+      playerRect.right - 50> obstacleRect.left &&
       //when the obstacle collides with the player from the upper side of the player
-      playerRect.bottom > obstacleRect.top
+      playerRect.top + 20< obstacleRect.bottom
     ) {
       return true; // obstacle and player did collide if any of the statements inside the if conditional occurs
     } else {
