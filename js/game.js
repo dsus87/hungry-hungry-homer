@@ -21,7 +21,6 @@ class Game {
         this.width = 1450; //games' width
         this.height = 825; // games' height
         this.obstacles = []; // new Obstacle()
-        this.obstaclesDonut = [];    // new Obstacle()
         this.obstaclesRibWich = [];    // new Obstacle()
         this.obstaclesBeer = [];   
         this.obstaclesPomato = [];
@@ -29,7 +28,6 @@ class Game {
      
         this.score = 0;
         this.lives = 5;
-        this.gameIsOver = false;
     }
 
     start(){
@@ -49,19 +47,12 @@ class Game {
 
     gameLoop(){
         //method taking place throughout the game, basically its going to check if object and player are colliding since the game is based on this dynamic
-        // Right now, always this.gameIsOver === false
-        if(this.gameIsOver === true){
-            return;
-        }
-
-
-        //console.log('gameLoop exec');
         this.updateHomer();// updating homer's position
         this.update();// update the game 
 
         this.didPlayerCollide(this.obstacles)
         this.didPlayerCollide(this.obstaclesBeer);
-        this.didPlayerCollide(this.obstaclesDonut);
+        //this.didPlayerCollide(this.obstaclesDonut);
         this.didPlayerCollide(this.obstaclesRibWich);
         this.didPlayerCollide(this.obstaclesPomato);
         this.didPlayerCollide(this.obstaclesBlinky);
@@ -166,7 +157,6 @@ class Game {
         
         for(let i= 0; i < obstaclesArray.length; i++){   
             const obstacle = obstaclesArray[i];
-            console.log(obstacle);
        
             // If the player's collides with an obstacle
                 if (this.player.didCollide(obstacle)) {
@@ -201,12 +191,12 @@ class Game {
                     document.getElementById('lives').textContent = this.lives;
                     document.getElementById('score').textContent = this.score;
                     // Update the counter variable to account for the removed obstacle
-                    i--;
+        
                 }
             };
 
             // End the game and stop the music
-            if (this.lives <= 0) {
+            if (this.lives === 0) {
                 this.endGame();
                 audio.pause();
             }
@@ -216,7 +206,6 @@ class Game {
     endGame() {
         this.player.element.remove(); // remove Homer from the screen
         this.obstacles.forEach(obstacle => obstacle.element.remove()); // remove the obstacles from the screen
-        this.gameIsOver = true; // cancel the execution of gameLoop()
         // Hide game screen
         this.gameScreen.style.display = "none";
         // Show end game screen
