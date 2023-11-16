@@ -7,11 +7,11 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;
-	background: transparent;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
   text-align: center;
   justify-content: center;
   justify-items: center;
@@ -24,7 +24,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 
 #game-intro {
-  padding: 170px 300px;
+  padding: 180px 300px;
   background-image: url("../images/Clouds.jpg");
   background-size: cover;
   display: flex;
@@ -80,8 +80,6 @@ table, caption, tbody, tfoot, thead, tr, th, td {
   font-size: 58px;
   font-family: akbar;
 }
-
-
 
 body button {
   background-color: #c80813ff;
