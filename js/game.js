@@ -1,3 +1,4 @@
+// this is the game class
 class Game {
 
     // gonna take care of setting elements taking role in the whole game process, screens, position update of player and obstacles,
