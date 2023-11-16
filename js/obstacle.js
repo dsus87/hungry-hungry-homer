@@ -22,7 +22,7 @@ class Obstacle { // class for the obstacles, starting with the donut and extendi
     updatePosition() {
       this.element.style.left = `${this.left}px`;
       this.element.style.top = `${this.top}px`;
-      console.log('obstacle position', this.element.getBoundingClientRect());
+      //console.log('obstacle position', this.element.getBoundingClientRect());
     }
     
     //motion method where it changes its position vertically and then calling out the position update method 
@@ -87,7 +87,7 @@ class Obstacle { // class for the obstacles, starting with the donut and extendi
   class Blinky extends Obstacle {
     constructor(gameScreen, name) {
       super(gameScreen);
-      this.element.src = './images/blinky.png';
+      this.element.src = './images/Blinky.png';
       this.name = name;
     }
     move() {

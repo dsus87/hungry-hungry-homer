@@ -55,7 +55,7 @@ class Game {
         }
 
 
-        console.log('gameLoop exec');
+        //console.log('gameLoop exec');
         this.updateHomer();// updating homer's position
         this.update();// update the game 
 
