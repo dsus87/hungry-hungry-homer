@@ -116,7 +116,7 @@ The game ends when homer has 0 lives
 ### Slides
 [Link](https://docs.google.com/presentation/d/1Kmj5rxpocCWu8Oz7z_vC4Jsg6jqtuQPqEDrn2OtV_H8/edit?usp=sharing)
 
-## Github Repository Link
+### Github Repository Link
 [Link](https://github.com/dsus87/hungry-hungry-homer.git)
 
 
