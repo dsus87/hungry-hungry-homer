@@ -42,7 +42,6 @@ class Player {
   updatePosition(){
       this.element.style.left = `${this.left}px`;
       this.element.style.top = `${this.top}px`;
-      console.log('player position', this.element.getBoundingClientRect())
   }
 
   //establish the conditions of collision
@@ -54,11 +53,11 @@ class Player {
 
     if (
       //when obstacle collides with the player from the players' right side
-      playerRect.left + 30< obstacleRect.right &&
+      playerRect.left + 30 < obstacleRect.right &&
       //when the obstacle collides with the player from the playerr' left side 
-      playerRect.right - 50> obstacleRect.left &&
+      playerRect.right - 50 > obstacleRect.left &&
       //when the obstacle collides with the player from the upper side of the player
-      playerRect.top + 20< obstacleRect.bottom
+      playerRect.top + 20 < obstacleRect.bottom
     ) {
       return true; // obstacle and player did collide if any of the statements inside the if conditional occurs
     } else {
