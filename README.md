@@ -1,6 +1,11 @@
-Description
+# Hungry Hungry Homer
+
+[Click here to see deployed game](https://dsus87.github.io/hungry-hungry-homer/)
+
+## Description
 Hungry, Hungry Homer is a fun game where players aim to achieve the highest score by collecting Homer's favorite items: donuts, beer, and ribwitches. Each item awards a specific number of points. However, danger lurks in the form of Pomato juice and the infamous Blinky. Contact with Pomato juice costs Homer a life, while an encounter with Blinky results in an instant game-over. The player's final score is determined by the total items collected before Homer runs out of lives.
-Main Functionalities
+
+## Main Functionalities
 
 Automatic Movement: Homer moves continuously, with players controlling his direction using left and right clicks.
 
@@ -17,7 +22,7 @@ The game difficulty increases as the game progresses. This changes both the spee
 
 Scoring System: The score is calculated based on the number of items collected and the duration of gameplay.
 
-Technologies Used
+## Technologies Used
 HTML
 CSS
 JavaScript
@@ -27,14 +32,14 @@ Local Storage??
 JS Audio() and JS Image()
 
 
-States
+## States
 Start Screen
 Game Screen
 Game Over Screen
 
 
-Project Structure
-Game.js
+## Project Structure
+### Game.js
 Game();
 this.startScreen;
 this.gameScreen;
@@ -61,7 +66,7 @@ noCollision();
 didPlayerCollide();
 endGame();
 
-Obstacle.js
+### Obstacle.js
 Obstacle()
 this.gameScreen;
 this.left;
@@ -88,7 +93,7 @@ move();
 Blinky();
 move();
 
-Player.js
+### Player.js
 Player ()
 this.gameScreen;
 this.left;
@@ -111,7 +116,9 @@ updatePosition();
 didCollide();
 
 
-Script.js
+### Script.js
 startGame();
 restartGame();
 handleKeydown();
+
+
