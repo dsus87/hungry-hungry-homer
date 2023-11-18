@@ -22,7 +22,6 @@ The game ends when homer has 0 lives
 - JavaScript
 - DOM Manipulation
 - JS Classes
-- Local Storage??
 - JS Audio() and JS Image()
 
 
